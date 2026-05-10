@@ -36,10 +36,10 @@ if ($omniProcess) {
 else {
     Write-Step ".." "Starting OmniRoute..." "Yellow"
     if (Test-Path $OMNIROUTE_EXE) {
-        Start-Process -FilePath $OMNIROUTE_EXE -WindowStyle Minimized
+        Start-Process -FilePath $OMNIROUTE_EXE
         Write-Step ".." "Waiting for OmniRoute to initialize..." "Yellow"
         $retries = 0
-        $maxRetries = 30
+        $maxRetries = 60
         while ($retries -lt $maxRetries) {
             Start-Sleep -Seconds 1
             try {
